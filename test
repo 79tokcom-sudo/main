@@ -1,0 +1,32 @@
+import csv
+import googleapiclient.discovery
+
+api_key = "YOUR_YOUTUBE_API_KEY"
+youtube = googleapiclient.discovery.build("youtube", "v3", developerKey=api_key)
+
+def get_channel_email(channel_name):
+    # Search channel
+    res = youtube.search().list(q=channel_name, part="snippet", type="channel", maxResults=1).execute()
+    items = res.get("items")
+    if not items:
+        return None
+
+    channel_id = items[0]["snippet"]["channelId"]
+
+    # Get channel about
+    about = youtube.channels().list(id=channel_id, part="snippet,brandingSettings").execute()
+    data = about["items"][0]
+
+    email = data["brandingSettings"]["channel"].get("unsubscribedTrailer")
+    return email
+
+with open("channels.txt") as f:
+    channels = [c.strip() for c in f]
+
+with open("emails.csv", "w", newline="", encoding="utf-8") as out:
+    writer = csv.writer(out)
+    writer.writerow(["Channel", "Email"])
+    for c in channels:
+        email = get_channel_email(c)
+        writer.writerow([c, email])
+        print(f"{c}: {email}")
