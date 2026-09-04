@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>스튜디오 리뉴얼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400&family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --canvas: #09090B;
+      --ivory: #F4F0E6;
+      --muted: #8A8478;
+      --ember: #FF4D1C;
+      --hairline: rgba(245, 240, 232, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--canvas);
+      color: var(--ivory);
+      font-family: Outfit, sans-serif;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .stage {
+      padding: 48px 40px;
+      border-right: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        linear-gradient(180deg, transparent, rgba(0,0,0,0.55)),
+        url("../thumb-studio.jpg") center/cover;
+      min-height: 100vh;
+    }
+    .stage p {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #cfc6b6;
+      margin-bottom: 12px;
+    }
+    .stage h1 {
+      font-family: Fraunces, serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+    }
+    .spec { padding: 48px 40px; }
+    .spec h2 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .swatches { display: flex; gap: 10px; margin-bottom: 36px; }
+    .swatches i {
+      display: block;
+      width: 56px;
+      height: 72px;
+      border: 1px solid var(--hairline);
+      font-style: normal;
+    }
+    .t { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 36ch; }
+    @media (max-width: 700px) {
+      body { grid-template-columns: 1fr; }
+      .stage { min-height: 42vh; border-right: 0; border-bottom: 1px solid var(--hairline); }
+    }
+  </style>
+</head>
+<body>
+  <section class="stage">
+    <p>Atelier Night System · 2026</p>
+    <h1>모니터 빛과<br />지문의 온도</h1>
+  </section>
+  <section class="spec">
+    <h2>Brand tokens</h2>
+    <div class="swatches" aria-hidden="true">
+      <i style="background:#09090B"></i>
+      <i style="background:#121214"></i>
+      <i style="background:#F4F0E6"></i>
+      <i style="background:#FF4D1C"></i>
+    </div>
+    <p class="t">작업실의 밤을 기준으로 재구성한 브랜드 시스템. 숯, 상아, 엠버 한 점. 화면은 갤러리이고, 제품은 그 안의 스틸입니다.</p>
+  </section>
+</body>
+</html>

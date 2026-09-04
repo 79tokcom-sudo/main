@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>제품 론칭</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #000 url("../thumb-launch.jpg") center/cover no-repeat;
+      color: #F4F0E6;
+      font-family: Fraunces, serif;
+      display: grid;
+      place-items: end start;
+      padding: 48px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.55));
+      pointer-events: none;
+    }
+    .copy { position: relative; }
+    .copy span {
+      display: block;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #FF4D1C;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-weight: 300;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+    }
+    p {
+      margin-top: 16px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8A8478;
+    }
+  </style>
+</head>
+<body>
+  <div class="copy">
+    <span>Drop 01 · Campaign</span>
+    <h1>Capsule<br />in the void.</h1>
+    <p>Ember rim · 2025</p>
+  </div>
+</body>
+</html>
